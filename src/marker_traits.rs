@@ -69,7 +69,7 @@ pub trait Unsigned: Sealed + Copy + Default + 'static {
     #[allow(missing_docs)]
     const U128: u128;
     #[allow(missing_docs)]
-    const USIZE: usize;
+    type const USIZE: usize;
 
     #[allow(missing_docs)]
     const I8: i8;

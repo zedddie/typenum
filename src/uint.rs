@@ -64,7 +64,7 @@ impl Unsigned for UTerm {
     const U64: u64 = 0;
     #[cfg(feature = "i128")]
     const U128: u128 = 0;
-    const USIZE: usize = 0;
+    type const USIZE: usize = 0;
 
     const I8: i8 = 0;
     const I16: i16 = 0;
@@ -167,7 +167,7 @@ impl<U: Unsigned, B: Bit> Unsigned for UInt<U, B> {
     const U64: u64 = B::U8 as u64 | U::U64 << 1;
     #[cfg(feature = "i128")]
     const U128: u128 = B::U8 as u128 | U::U128 << 1;
-    const USIZE: usize = B::U8 as usize | U::USIZE << 1;
+    type const USIZE: usize = const { B::U8 as usize | U::USIZE << 1 } ;
 
     const I8: i8 = B::U8 as i8 | U::I8 << 1;
     const I16: i16 = B::U8 as i16 | U::I16 << 1;

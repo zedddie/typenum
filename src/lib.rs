@@ -39,6 +39,7 @@
 //!
 //! Documented in each module is the full list of type operators implemented.
 
+#![feature(min_generic_const_args, generic_const_args)]
 #![no_std]
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
